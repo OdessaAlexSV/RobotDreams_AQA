@@ -1,0 +1,28 @@
+docker run mysql
+docker run -e MYSQL_ROOT_PASSWORD=password mysql
+docker ps
+docker kill 4ca01a6aa9b4
+docker build -f MyDockerfile -t webserver .
+docker run webserver
+docker run -p 3000:4567 webserver
+docker run -p 3001:4567 webserver
+docker run -p 3001:4567 -e SERVER_PARAMETER=Server webserver
+docker run -p 3001:4567 -d -e SERVER_PARAMETER=Server webserver
+docker ps
+docker exec -ti 1bb5e68a3e0e /bin/bash
+docker ps
+docker kill 1bb5e68a3e0e
+docker image list
+docker build -f MyDockerfile -t webserver .
+docker image list
+docker run -p 3001:4567 -d -e SERVER_PARAMETER=Server 37561a168326
+docker image list
+docker image prune
+docker image list
+docker image prune --all
+docker image list
+docker ps
+docker kill f53210dce318
+docker ps
+docker container list
+docker image prune --all
