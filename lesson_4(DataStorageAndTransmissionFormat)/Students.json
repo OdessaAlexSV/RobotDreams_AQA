@@ -8,8 +8,8 @@
           "last": "Bishop"
         },
         "birthdate": "Feb/13/2004",
-        "age": "18",
-        "married": "false"
+        "age": 18,
+        "married": false
       },
       "Location": {
         "street": {
@@ -19,7 +19,7 @@
         "city": "Swords",
         "state": "Clare",
         "country": "Ireland",
-        "postcode": "23128"
+        "postcode": 23128
       },
       "email": "jessie.bishop@example.com",
       "course": [
@@ -28,7 +28,7 @@
 		{"id": "003", "name":"history"}
       ],
       "phone": "051-205-1077",
-      "cell": "null",
+      "cell": null,
       "picture": {
         "large": "https://randomuser.me/api/portraits/men/58.jpg",
         "medium": "https://randomuser.me/api/portraits/med/men/58.jpg",
@@ -36,7 +36,7 @@
       },
       "registered": {
         "date": "2022-02-02T00:40:50.535Z",
-        "age": "7"
+        "age": 7
       }
     },
     {
@@ -47,23 +47,23 @@
           "last": "Lee"
         },
         "birthdate": "Apr/01/2002",
-        "age": "19",
-        "married": "true"
+        "age": 19,
+        "married": true
       },
       "Location": {
         "street": {
-          "number": "693",
+          "number": "693a",
           "name": "Port Hills Road"
         },
         "city": "New Plymouth",
         "state": "Gisborne",
         "country": "New Zealand",
-        "postcode": "17771"
+        "postcode": 17771
       },
       "email": "emily.lee@example.com",
-      "course": ["null"],
+	  "course": [],
       "phone": "051-204-1055",
-      "cell": "null",
+      "cell": null,
       "picture": {
         "large": "https://randomuser.me/api/portraits/women/74.jpg",
         "medium": "https://randomuser.me/api/portraits/med/women/74.jpg",
@@ -71,7 +71,7 @@
       },
       "registered": {
         "date": "2016-10-03T22:56:25.458Z",
-        "age": "6"
+        "age": 6
       }
     }
   ]

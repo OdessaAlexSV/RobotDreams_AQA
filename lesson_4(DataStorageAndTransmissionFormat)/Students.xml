@@ -34,7 +34,7 @@
 			<name>history</name>
 		</course>
 		<phone>051-205-1077</phone>
-		<cell>null</cell>
+		<cell></cell>
 		<picture>
 			<large>https://randomuser.me/api/portraits/men/58.jpg</large>
 			<medium>https://randomuser.me/api/portraits/med/men/58.jpg</medium>
@@ -67,9 +67,9 @@
 			<postcode>17771</postcode>
 		</Location>
 		<email>emily.lee@example.com</email>
-		<course>null</course>
+		<course></course>
 		<phone>051-204-1055</phone>
-		<cell>null</cell>
+		<cell></cell>
 		<picture>
 			<large>https://randomuser.me/api/portraits/women/74.jpg</large>
 			<medium>https://randomuser.me/api/portraits/med/women/74.jpg</medium>
