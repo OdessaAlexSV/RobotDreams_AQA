@@ -1,0 +1,78 @@
+{
+  "Students": [
+    {
+      "Person": {
+        "gender": "male",
+        "name": {
+          "first": "Jessie",
+          "last": "Bishop"
+        },
+        "birthdate": "Feb/13/2004",
+        "age": 18,
+        "married": false
+      },
+      "Location": {
+        "street": {
+          "number": "1987",
+          "name": "New Road"
+        },
+        "city": "Swords",
+        "state": "Clare",
+        "country": "Ireland",
+        "postcode": 23128
+      },
+      "email": "jessie.bishop@example.com",
+      "course": [
+	    {"id": "001", "name": "math"},
+		{"id": "002", "name": "biology"},
+		{"id": "003", "name":"history"}
+      ],
+      "phone": "051-205-1077",
+      "cell": null,
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/58.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/58.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/58.jpg"
+      },
+      "registered": {
+        "date": "2022-02-02T00:40:50.535Z",
+        "age": 7
+      }
+    },
+    {
+      "Person": {
+        "gender": "female",
+        "name": {
+          "first": "Emily",
+          "last": "Lee"
+        },
+        "birthdate": "Apr/01/2002",
+        "age": 19,
+        "married": true
+      },
+      "Location": {
+        "street": {
+          "number": "693a",
+          "name": "Port Hills Road"
+        },
+        "city": "New Plymouth",
+        "state": "Gisborne",
+        "country": "New Zealand",
+        "postcode": 17771
+      },
+      "email": "emily.lee@example.com",
+	  "course": [],
+      "phone": "051-204-1055",
+      "cell": null,
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/74.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/74.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/74.jpg"
+      },
+      "registered": {
+        "date": "2016-10-03T22:56:25.458Z",
+        "age": 6
+      }
+    }
+  ]
+}
