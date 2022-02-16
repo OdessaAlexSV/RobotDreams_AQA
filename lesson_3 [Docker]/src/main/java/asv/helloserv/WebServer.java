@@ -1,4 +1,4 @@
-package asv.hellomaven;
+package asv.helloserv;
 
 import spark.Request;
 import spark.Response;
