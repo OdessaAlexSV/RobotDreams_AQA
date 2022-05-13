@@ -1,5 +1,9 @@
 package asv.conditions;
 
+/**
+ * Created by asvidersky on 5/13/2022.
+ */
+
 public class SubMain {
     public static void main(String[] args) {
         String result = returnStringWithNumber();

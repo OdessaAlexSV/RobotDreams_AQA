@@ -1,7 +1,10 @@
 package asv.conditions;
 
-public class Main {
+/**
+ * Created by asvidersky on 5/13/2022.
+ */
 
+public class Main {
     public static void switchExample(Integer s, int s2) {
         switch (s) {
 

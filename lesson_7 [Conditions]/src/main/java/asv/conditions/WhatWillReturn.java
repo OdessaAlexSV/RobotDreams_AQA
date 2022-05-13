@@ -1,5 +1,9 @@
 package asv.conditions;
 
+/**
+ * Created by asvidersky on 5/13/2022.
+ */
+
 public class WhatWillReturn {
     static boolean func1(){
         System.out.println("Step 2");
