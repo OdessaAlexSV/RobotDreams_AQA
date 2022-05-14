@@ -56,7 +56,7 @@ public class Main {
         }
 
         for (String element : finalStrArray) {
-            char[] chars = element.toCharArray();
+            char[] chars = element.toUpperCase().toCharArray();
             for (char ch : chars) {
                 if (!finalCharArray.contains(ch)){
                     finalCharArray.add(ch);
