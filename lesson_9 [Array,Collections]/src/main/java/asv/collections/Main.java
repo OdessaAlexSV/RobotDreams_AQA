@@ -1,9 +1,6 @@
 package asv.collections;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * из заданного списка строк необходимо найти первые две в которых каждая буква встречается четное количество раз
@@ -37,7 +34,7 @@ public class Main {
             boolean isThereEvenNumLetter = true;
 
             if (element.length() % 2 == 0 & numString < 2) {
-                char[] chars = element.toCharArray();
+                char[] chars = element.toUpperCase().toCharArray();
                 Arrays.sort(chars);
                 String sortedElement = String.copyValueOf(chars);
 
