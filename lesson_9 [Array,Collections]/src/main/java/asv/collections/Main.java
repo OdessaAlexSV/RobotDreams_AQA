@@ -14,40 +14,35 @@ import java.util.*;
 
 public class Main {
     private static List<String> finalStrArray = new ArrayList<String>();
-    private static List<Character> finalCharArray = new ArrayList<Character>();
+    private static HashMap<Character, Integer> keyValue = new HashMap<Character, Integer>();
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.println("Input a string array (either EN/RU), every string must be surrounded by quote and separated by comma: ");
         String str = s.nextLine();
         String[] arrayStr = str.replaceAll("[^a-zA-ZА-ЯЁа-яё/,]", "").split(",");
-        analyzePhrase(arrayStr);
+        System.out.println(analyzePhrase(arrayStr));
         s.close();
     }
 
-    private static void analyzePhrase(String[] arrayStr) {
+    private static Set<Character> analyzePhrase(String[] arrayStr) {
         int numString = 0;
 
         for (String element : arrayStr) {
-            int lastPosition;
-            int countChar;
             boolean isThereEvenNumLetter = true;
 
-            if (element.length() % 2 == 0 & numString < 2) {
-                char[] chars = element.toUpperCase().toCharArray();
-                Arrays.sort(chars);
-                String sortedElement = String.copyValueOf(chars);
+            if (element.length() % 2 == 0 && numString < 2) {
+                char[] charsOfWord = element.toUpperCase().toCharArray();
+                char[] sortedCharsOfWord = Arrays.copyOf(charsOfWord, charsOfWord.length);
+                Arrays.sort(sortedCharsOfWord);
 
-                for (int i = 0; i < sortedElement.length(); i++) {
-                    lastPosition = sortedElement.lastIndexOf(chars[i]);
-                    countChar = lastPosition - i + 1;
-                    if ((countChar % 2) == 0) {
-                        i = lastPosition;
-                    } else {
-                        i = sortedElement.length();
+                for (int i = 0; i < sortedCharsOfWord.length; i = i + 2) {
+                    if (sortedCharsOfWord[i] != sortedCharsOfWord[i + 1]) {
                         isThereEvenNumLetter = false;
+                        break;
                     }
                 }
+
                 if (isThereEvenNumLetter) {
                     finalStrArray.add(element);
                     numString++;
@@ -58,11 +53,10 @@ public class Main {
         for (String element : finalStrArray) {
             char[] chars = element.toUpperCase().toCharArray();
             for (char ch : chars) {
-                if (!finalCharArray.contains(ch)){
-                    finalCharArray.add(ch);
-                }
+                keyValue.put(ch, (keyValue.getOrDefault(ch, 0))+1);
             }
         }
-        System.out.println(finalCharArray);
+        System.out.println(keyValue);
+        return keyValue.keySet();
     }
 }
