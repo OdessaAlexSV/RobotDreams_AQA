@@ -2,14 +2,14 @@ package my.robotdreams.cc.hw;
 
 public enum SolarPlanets {
     MERCURY(1,0,2439,null),
-    VENUS(2,50,6052, MERCURY),
-    EARTH(3,42,  6378, VENUS),
-    MARS(4,78,  3488, EARTH),
-    JUPITER(5,550,  71300, MARS),
-    SATURN(6,651,  60100, JUPITER),
-    URANUS(7,1446,  26500, SATURN),
-    NEPTUN(8,1622,  2439, URANUS),
-    PLUTO(9,1416,  2000, NEPTUN);
+    VENUS(2,50,6052,MERCURY),
+    EARTH(3,42,6378,VENUS),
+    MARS(4,78,3488,EARTH),
+    JUPITER(5,550,71300,MARS),
+    SATURN(6,651,60100,JUPITER),
+    URANUS(7,1446,26500,SATURN),
+    NEPTUN(8,1622,2439,URANUS),
+    PLUTO(9,1416,2000,NEPTUN);
 
     private int num;
     private int distanceFromPrevPlanet;
