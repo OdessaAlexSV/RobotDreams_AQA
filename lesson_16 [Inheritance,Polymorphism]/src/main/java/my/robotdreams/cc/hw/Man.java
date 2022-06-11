@@ -1,6 +1,6 @@
 package my.robotdreams.cc.hw;
 
-import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 /**
@@ -8,13 +8,12 @@ import lombok.Setter;
  */
 
 @Setter
-@Getter
 public class Man extends Person {
 
     private boolean isServedArmy;
 
-    public Man(String firstName, String lastName, int age, boolean partner,String graduation, boolean isServedArmy) {
-        super(firstName, lastName, age, partner,  graduation);
+    public Man(String firstName, String lastName, int age, boolean isServedArmy) {
+        super(firstName, lastName, age);
         this.isServedArmy = isServedArmy;
     }
 
@@ -24,12 +23,21 @@ public class Man extends Person {
     }
 
     @Override
-    public boolean registerPartnership() {
-        return false;
+    public void registerPartnership(@NonNull Person person) {
+        if ( this.getPartner()!= null && !this.getPartner().equals(person)) {
+        }
+        this.setPartner(person);
     }
 
     @Override
-    public boolean deregisterPartnership(boolean isBackToPrevName) {
-        return isBackToPrevName;
+    public void deregisterPartnership(boolean isBackToPrevName) {
+        if (isBackToPrevName) {
+            this.getPartner().setPartner(null);
+            this.setPartner(null);
+        }
+    }
+
+   public boolean isServedArmy() {
+        return this.isServedArmy;
     }
 }
