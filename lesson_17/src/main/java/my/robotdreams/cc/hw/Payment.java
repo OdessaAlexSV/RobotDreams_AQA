@@ -12,9 +12,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Payment {
-    int paymentAmount;
-    String currency;
-    String clientID;
+    private int paymentAmount;
+    private String currency;
+    private String clientID;
 
     @Override
     public String toString() {
