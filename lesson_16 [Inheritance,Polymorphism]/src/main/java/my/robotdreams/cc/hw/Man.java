@@ -24,9 +24,7 @@ public class Man extends Person {
 
     @Override
     public void registerPartnership(@NonNull Person person) {
-        if ( this.getPartner()!= null && !this.getPartner().equals(person)) {
-        }
-        this.setPartner(person);
+       this.setPartner(person);
     }
 
     @Override

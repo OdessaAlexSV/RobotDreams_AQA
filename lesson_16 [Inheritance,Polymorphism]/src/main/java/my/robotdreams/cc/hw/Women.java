@@ -34,7 +34,6 @@ public class Women extends Person {
         } else {
             if (!person.getPartner().equals(this)) {
                 System.out.println(person.getFirstName() + " " + person.getLastName() + " is already married!\n");
-
             }
         }
     }
