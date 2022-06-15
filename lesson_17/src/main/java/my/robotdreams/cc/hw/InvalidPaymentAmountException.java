@@ -1,0 +1,7 @@
+package my.robotdreams.cc.hw;
+
+public class InvalidPaymentAmountException extends Exception{
+    public InvalidPaymentAmountException(String message) {
+        super(message);
+    }
+}
