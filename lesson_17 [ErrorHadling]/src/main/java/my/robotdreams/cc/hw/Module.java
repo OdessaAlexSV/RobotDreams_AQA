@@ -6,7 +6,6 @@ import java.util.Random;
 public class Module {
     public static List<String> SUPPORTED_CURRENCIES = List.of("USD", "EUR", "JPY", "CHF");
 
-
     public String processPayment(Payment payment)
             throws InvalidPaymentCurrencyException, InvalidPaymentAmountException, BankProcessingFailedException, InvalidClientID {
 
@@ -31,15 +30,13 @@ public class Module {
             Random random = new Random();
             statusCode = random.nextInt(10);
             if (statusCode > 5) {
-                throw new BankProcessingFailedException(String.format("Bank returned result code %s", statusCode));
+                throw new BankProcessingFailedException(statusCode);
             }
             return "trx_4knfsf4gs412355";
         } else {
             statusCode = -1;
-            throw new BankProcessingFailedException(String.format("Bank returned result code %s", statusCode));
+            throw new BankProcessingFailedException(statusCode);
         }
 
     }
-
-
 }
