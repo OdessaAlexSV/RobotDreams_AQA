@@ -1,5 +1,6 @@
 package my.robotdreams.cc.hw;
 
+import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import lombok.Setter;
  */
 
 @Setter
+@Getter
 public class Man extends Person {
 
     private boolean isServedArmy;

@@ -7,8 +7,8 @@ import lombok.Setter;
  * Created by asvidersky on 6/7/2022.
  */
 
-@Setter
 @Getter
+@Setter
 public abstract class Person {
     private String firstName;
     private String lastName;
