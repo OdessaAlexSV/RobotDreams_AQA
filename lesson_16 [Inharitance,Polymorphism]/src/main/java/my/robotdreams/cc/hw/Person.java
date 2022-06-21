@@ -22,7 +22,7 @@ public abstract class Person {
     }
 
     public abstract boolean isRetired();
-    public abstract void registerPartnership(Person person);
+    public abstract void registerPartnership(Person person) throws AlreadyMarriedException;
     public abstract void deregisterPartnership(boolean isBackToMaidenName);
 
     @Override

@@ -26,12 +26,21 @@ public class Main {
         printMenWomen(men, women);
 
         System.out.println("\nUpdated info after some marriages:\n");
-        woman1.registerPartnership(man1);
-        woman2.registerPartnership(man1);
+        try {
+            woman1.registerPartnership(man1);
+            woman2.registerPartnership(man1);
+        } catch (AlreadyMarriedException e) {
+            e.printStackTrace();
+        }
+
         printMenWomen(men, women);
 
         System.out.println("\nUpdated info after another marriage:\n");
-        woman2.registerPartnership(man2);
+        try {
+            woman2.registerPartnership(man2);
+        } catch (AlreadyMarriedException e) {
+            e.printStackTrace();
+        }
         printMenWomen(men, women);
 
         System.out.println("\nUpdated info after divorce(via woman):\n");

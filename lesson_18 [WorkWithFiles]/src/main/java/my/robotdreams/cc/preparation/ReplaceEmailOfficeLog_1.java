@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ReplaceEmailOfficeLog_1 {
     public static void main(String[] arg) {
-        String path = "D:\\Personal\\Devel\\RobotDreams_AQA\\lesson_18\\src\\main\\resources";
+        String path = "D:\\Personal\\Devel\\RobotDreams_AQA\\lesson_18 [WorkWithFiles]\\src\\main\\resources";
         String fileOrigin = "AuditLog_2022-05-31_2022-06-13.csv";
 
         Path filePath = Paths.get(path);

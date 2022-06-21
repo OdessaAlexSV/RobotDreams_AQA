@@ -24,17 +24,18 @@ public class Women extends Person {
     }
 
     @Override
-    public void registerPartnership(@NonNull Person person) {
+    public void registerPartnership(@NonNull Person person) throws AlreadyMarriedException {
         String womanLastName = womanLastNameAdjustment(person.getLastName());
-        if (person.getPartner() == null) {
-                this.setLastName(womanLastName);
-                this.setPartner(person);
-                person.registerPartnership(this);
 
-        } else {
-            if (!person.getPartner().equals(this)) {
-                System.out.println(person.getFirstName() + " " + person.getLastName() + " is already married!\n");
-            }
+        if (person.getPartner() == null) {
+            this.setLastName(womanLastName);
+            this.setPartner(person);
+            person.registerPartnership(this);
+
+        }
+
+        if (!person.getPartner().equals(this))  {
+            throw new AlreadyMarriedException(person.getFirstName() + " " + person.getLastName() + " is already married!");
         }
     }
 
