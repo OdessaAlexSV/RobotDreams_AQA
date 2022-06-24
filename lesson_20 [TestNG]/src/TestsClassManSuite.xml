@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Class Man All Tests">
+    <test name="ClassMan">
+        <classes>
+            <class name="cc.robotdreams.my.hw.TestsClassMan"/>
+        </classes>
+    </test>
+</suite>

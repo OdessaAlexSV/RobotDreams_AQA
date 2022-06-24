@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
  * Created by asvidersky on 6/21/2022.
  */
 
-public class TestClassMan {
+public class TestsClassMan {
 
     @Test
     public void testClassConstructor() {
@@ -15,58 +15,58 @@ public class TestClassMan {
         Assert.assertNotNull(man);
     }
 
-    @Test
+    @Test (groups = "Getter")
     public void testGetFirstName() {
         Man man = new Man("Vlad", "Ivanov", 62, true);
         Assert.assertEquals(man.getFirstName(), "Vlad");
     }
 
-    @Test
+    @Test (groups = "Setter")
     public void testSetFirstName() {
         Man man = new Man("Vlad", "Ivanov", 62, true);
         man.setFirstName("NewVlad");
         Assert.assertEquals(man.getFirstName(), "NewVlad");
     }
 
-    @Test
+    @Test (groups = "Getter")
     public void testGetLastName() {
         Man man = new Man("Vlad", "Ivanov", 62, true);
         Assert.assertEquals(man.getLastName(), "Ivanov");
     }
 
-    @Test
+    @Test (groups = "Setter")
     public void testSetLastName() {
         Man man = new Man("Vlad", "Ivanov", 62, true);
         man.setLastName("NewIvanov");
         Assert.assertEquals(man.getLastName(), "NewIvanov");
     }
 
-    @Test
+    @Test (groups = "Getter")
     public void testGetAge() {
         Man man = new Man("Vlad", "Ivanov", 62, true);
         Assert.assertEquals(man.getAge(), 62);
     }
 
-    @Test
+    @Test (groups = "Setter")
     public void testSetAge() {
         Man man = new Man("Vlad", "Ivanov", 62, true);
         man.setAge(60);
         Assert.assertEquals(man.getAge(), 60);
     }
 
-    @Test
+    @Test (groups = "Getter")
     public void testGetIsServedArmyTrue() {
         Man man = new Man("Vlad", "Ivanov", 62, true);
         Assert.assertTrue(man.isServedArmy());
     }
 
-    @Test
+    @Test (groups = "Getter")
     public void testGetIsServedArmyFalse() {
         Man man = new Man("Vlad", "Ivanov", 62, false);
         Assert.assertFalse(man.isServedArmy());
     }
 
-    @Test
+    @Test (groups = "Setter")
     public void testSetIsServedArmy() {
         Man man = new Man("Vlad", "Ivanov", 62, false);
         man.setServedArmy(true);

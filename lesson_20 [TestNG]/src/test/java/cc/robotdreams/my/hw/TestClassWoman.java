@@ -15,52 +15,52 @@ public class TestClassWoman {
         Assert.assertNotNull(woman);
     }
 
-    @Test
+    @Test (groups = "Getter")
     public void testGetFirstName() {
         Woman woman = new Woman("Mary", "Petrova", 61, "Petrova");
         Assert.assertEquals(woman.getFirstName(), "Mary");
     }
 
-    @Test
+    @Test (groups = "Setter")
     public void testSetFirstName() {
         Woman woman = new Woman("Mary", "Petrova", 61, "Petrova");
         woman.setFirstName("NewMary");
         Assert.assertEquals(woman.getFirstName(),"NewMary");
     }
 
-    @Test
+    @Test (groups = "Getter")
     public void testGetLastName() {
         Woman woman = new Woman("Mary", "Petrova", 61, "Petrova");
         Assert.assertEquals(woman.getLastName(), "Petrova");
     }
 
-    @Test
+    @Test (groups = "Setter")
     public void testSetLastName() {
         Woman woman = new Woman("Mary", "Petrova", 61, "Petrova");
         woman.setLastName("NewPetrova");
         Assert.assertEquals(woman.getLastName(),"NewPetrova");
     }
 
-    @Test
+    @Test (groups = "Getter")
     public void testGetAge() {
         Woman woman = new Woman("Mary", "Petrova", 61, "Petrova");
         Assert.assertEquals(woman.getAge(),61);
     }
 
-    @Test
+    @Test (groups = "Setter")
     public void testSetAge() {
         Woman woman = new Woman("Mary", "Petrova", 61, "Petrova");
         woman.setAge(60);
         Assert.assertEquals(woman.getAge(),60);
     }
 
-    @Test
+    @Test (groups = "Getter")
     public void testGetMaidenName() {
         Woman woman = new Woman("Mary", "Petrova", 61, "Petrova");
         Assert.assertEquals(woman.getMaidenName(),"Petrova");
     }
 
-    @Test
+    @Test (groups = "Setter")
     public void testSetMaidenName() {
         Woman woman = new Woman("Mary", "Petrova", 61, "Petrova");
         woman.setMaidenName("OldPetrova");
