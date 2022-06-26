@@ -1,6 +1,7 @@
 /out
 *.iml
 .idea
+*.csv
 
 # Compiled class file
 *.class

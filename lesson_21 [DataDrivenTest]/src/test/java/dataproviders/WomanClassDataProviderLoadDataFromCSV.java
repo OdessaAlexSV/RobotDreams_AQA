@@ -24,7 +24,7 @@ public class WomanClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][1];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            data[i][0] = new Woman(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), splitLine[3]);
+            data[i][0] = new Woman(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), splitLine[3]);
         }
         return data;
     }
@@ -35,7 +35,7 @@ public class WomanClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Woman woman = new Woman(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), splitLine[3]);
+            Woman woman = new Woman(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), splitLine[3]);
             String firstName = splitLine[0];
             data[i][0] = woman;
             data[i][1] = firstName;
@@ -49,7 +49,7 @@ public class WomanClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Woman woman = new Woman(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), splitLine[3]);
+            Woman woman = new Woman(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), splitLine[3]);
             String lastName = splitLine[1];
             data[i][0] = woman;
             data[i][1] = lastName;
@@ -63,8 +63,8 @@ public class WomanClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Woman woman = new Woman(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), splitLine[3]);
-            int age = Integer.parseInt(splitLine[2]);
+            Woman woman = new Woman(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), splitLine[3]);
+            int age = Integer.parseInt(splitLine[2].trim());
             data[i][0] = woman;
             data[i][1] = age;
         }
@@ -77,7 +77,7 @@ public class WomanClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2]),splitLine[3]);
+            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2].trim()),splitLine[3]);
             String maidenName = splitLine[3];
             data[i][0] = woman;
             data[i][1] = maidenName;
@@ -91,9 +91,9 @@ public class WomanClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2]),splitLine[3]);
+            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2].trim()),splitLine[3]);
             data[i][0] = woman;
-            if (Integer.parseInt(splitLine[2]) > 60) {
+            if (Integer.parseInt(splitLine[2].trim()) > 60) {
                 data[i][1] = true;
             } else {
                 data[i][1] = false;
@@ -108,7 +108,7 @@ public class WomanClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2]),splitLine[3]);
+            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2].trim()),splitLine[3]);
             Man man = new Man("Vlad", "Chub", 64, true);
             data[i][0] = man;
             data[i][1] = woman;
@@ -122,7 +122,7 @@ public class WomanClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][3];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2]),splitLine[3]);
+            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2].trim()),splitLine[3]);
             Man man1 = new Man("Vlad", "Chub", 64, true);
             Man man2 = new Man("Petro", "Shur", 65, false);
             data[i][0] = man1;
@@ -139,7 +139,7 @@ public class WomanClassDataProviderLoadDataFromCSV {
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
             Man man = new Man("Vlad", "Chub", 64, true);
-            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2]),splitLine[3]);
+            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2].trim()),splitLine[3]);
             Woman woman1 = new Woman("Aida", "Hell", 40, "Zlo");
             data[i][0] = man;
             data[i][1] = woman;
@@ -155,7 +155,7 @@ public class WomanClassDataProviderLoadDataFromCSV {
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
             Man man = new Man("Vlad", "Chub", 64, true);
-            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2]),splitLine[3]);
+            Woman woman = new Woman(splitLine[0],splitLine[1],Integer.parseInt(splitLine[2].trim()),splitLine[3]);
             boolean isDeregister = ThreadLocalRandom.current().nextBoolean();
             data[i][0] = man;
             data[i][1] = woman;

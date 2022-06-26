@@ -23,7 +23,7 @@ public class ManClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][1];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            data[i][0] = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), Boolean.parseBoolean(splitLine[3]));
+            data[i][0] = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), Boolean.parseBoolean(splitLine[3]));
         }
         return data;
     }
@@ -34,7 +34,7 @@ public class ManClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), Boolean.parseBoolean(splitLine[3]));
+            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), Boolean.parseBoolean(splitLine[3]));
             String firstName = splitLine[0];
             data[i][0] = man;
             data[i][1] = firstName;
@@ -48,7 +48,7 @@ public class ManClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), Boolean.parseBoolean(splitLine[3]));
+            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), Boolean.parseBoolean(splitLine[3]));
             String lastName = splitLine[1];
             data[i][0] = man;
             data[i][1] = lastName;
@@ -62,8 +62,8 @@ public class ManClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), Boolean.parseBoolean(splitLine[3]));
-            int age = Integer.parseInt(splitLine[2]);
+            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), Boolean.parseBoolean(splitLine[3]));
+            int age = Integer.parseInt(splitLine[2].trim());
             data[i][0] = man;
             data[i][1] = age;
         }
@@ -76,7 +76,7 @@ public class ManClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), Boolean.parseBoolean(splitLine[3]));
+            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), Boolean.parseBoolean(splitLine[3]));
             boolean isServedArmy = Boolean.parseBoolean(splitLine[3]);
             data[i][0] = man;
             data[i][1] = isServedArmy;
@@ -90,9 +90,9 @@ public class ManClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), Boolean.parseBoolean(splitLine[3]));
+            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), Boolean.parseBoolean(splitLine[3]));
             data[i][0] = man;
-            if (Integer.parseInt(splitLine[2]) > 65) {
+            if (Integer.parseInt(splitLine[2].trim()) > 65) {
                 data[i][1] = true;
             } else {
                 data[i][1] = false;
@@ -107,7 +107,7 @@ public class ManClassDataProviderLoadDataFromCSV {
         Object[][] data = new Object[lines.size() - 1][2];
         for (int i = 0; i < lines.size() - 1; i++) {
             String[] splitLine = lines.get(i + 1).split(",");
-            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2]), Boolean.parseBoolean(splitLine[3]));
+            Man man = new Man(splitLine[0], splitLine[1], Integer.parseInt(splitLine[2].trim()), Boolean.parseBoolean(splitLine[3]));
             data[i][0] = man;
             data[i][1] = new Woman("Mary", "Petrova", 31, "Petrova");
         }
