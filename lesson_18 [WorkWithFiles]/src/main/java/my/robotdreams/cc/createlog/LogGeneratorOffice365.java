@@ -17,10 +17,20 @@ import java.util.Random;
 
 public class LogGeneratorOffice365 {
 
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+    public static void main(String[] args) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        int countLog = 0;
+        int delayTime = -1;
 
-    public static void main(String[] arg) {
-        HashMap<Integer, String> expLogs = new HashMap<Integer, String>();
+        try {
+            countLog = Integer.parseInt(args[0]);
+            delayTime = 3600000*Integer.parseInt(args[1]);
+        } catch (RuntimeException t) {
+           // log.error(t);
+            throw new ArrayIndexOutOfBoundsException("No all arguments are defined. Launch format is, e.g.: java LogGeneratorOffice365.java 10 0");
+        }
+
+        HashMap<Integer, String> expLogs = new HashMap<>();
         expLogs.put(1, ".0000000Z,test-01@veridinet.com,UserLoggedIn,\"{\"\"CreationTime\"\":\"\"ChangedTimeCreation\"\",\"\"Id\"\":\"\"11a3a4df-a6d8-42cd-a23e-1204858b2827\"\",\"\"Operation\"\":\"\"UserLoggedIn\"\",\"\"OrganizationId\"\":\"\"73f5d3eb-40ae-45bd-82b4-20a92a4187c7\"\",\"\"RecordType\"\":15,\"\"ResultStatus\"\":\"\"Succeeded\"\",\"\"UserKey\"\":\"\"100300008A246DE2@veridinet.onmicrosoft.com\"\",\"\"UserType\"\":0,\"\"Version\"\":1,\"\"Workload\"\":\"\"AzureActiveDirectory\"\",\"\"ClientIP\"\":\"\"184.105.139.118\"\",\"\"ObjectId\"\":\"\"00000003-0000-0000-c000-000000000000\"\",\"\"UserId\"\":\"\"test-01@veridinet.com\"\",\"\"AzureActiveDirectoryEventType\"\":1,\"\"UserAgent\"\":\"\"Mozilla\\/2.0 (Windows NT 6.1; WOW64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/53.0.2785.116 Safari\\/537.36\"\",\"\"WebId\"\":\"\"2c7f42f4-d24c-4e10-b966-7ed60d01a1b7\"\",\"\"ExtendedProperties\"\":[{\"\"Name\"\":\"\"UserAgent\"\",\"\"Value\"\":\"\"Mozilla\\/5.0 (Windows NT 6.1; WOW64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/52.0.2743.116 Safari\\/537.36\"\"},{\"\"Name\"\":\"\"UserAuthenticationMethod\"\",\"\"Value\"\":\"\"1\"\"},{\"\"Name\"\":\"\"RequestType\"\",\"\"Value\"\":\"\"OAuth2:Authorize\"\"},{\"\"Name\"\":\"\"ResultStatusDetail\"\",\"\"Value\"\":\"\"Redirect\"\"},{\"\"Name\"\":\"\"KeepMeSignedIn\"\",\"\"Value\"\":\"\"False\"\"}],\"\"Actor\"\":[{\"\"ID\"\":\"\"ac19386e-503d-4d5c-bf18-a0348f1a8738\"\",\"\"Type\"\":0},{\"\"ID\"\":\"\"test-01@veridinet.com\"\",\"\"Type\"\":5},{\"\"ID\"\":\"\"100300008A246DE2\"\",\"\"Type\"\":3}],\"\"ActorContextId\"\":\"\"73f5d3eb-40ae-45bd-82b4-20a92a4187c7\"\",\"\"ActorIpAddress\"\":\"\"31.154.10.42\"\",\"\"InterSystemsId\"\":\"\"7225d564-e2bf-4a67-aec0-b8547ec7a064\"\",\"\"IntraSystemId\"\":\"\"e5e5da07-36b7-4a93-b572-d1e41abe12d2\"\",\"\"Target\"\":[{\"\"ID\"\":\"\"00000003-0000-0000-c000-000000000000\"\",\"\"Type\"\":0}],\"\"TargetContextId\"\":\"\"73f5d3eb-40ae-45bd-82b4-20a92a4187c7\"\",\"\"ApplicationId\"\":\"\"e48d4214-364e-4731-b2b6-47dabf529218\"\"}\"");
         expLogs.put(2, ".0000000Z,test-01@veridinet.com,FileUploaded,\"{\"\"CreationTime\"\":\"\"ChangedTimeCreation\"\",\"\"Id\"\":\"\"94c55c5d-414f-4cf3-2b30-08d54142743e\"\",\"\"Operation\"\":\"\"FileUploaded\"\",\"\"OrganizationId\"\":\"\"73f5d3eb-40ae-45bd-82b4-20a92a4187c7\"\",\"\"RecordType\"\":6,\"\"UserKey\"\":\"\"i:0h.f|membership|1003bffd823db125@live.com\"\",\"\"UserType\"\":0,\"\"Version\"\":1,\"\"Workload\"\":\"\"OneDrive\"\",\"\"ClientIP\"\":\"\"31.154.9.98\"\",\"\"ObjectId\"\":\"\"https:\\/\\/veridinet-my.sharepoint.com\\/personal\\/alan_veridinet_com\\/Documents\\/!!__11Demo11__!!\\/CC Numbers.docx\"\",\"\"UserId\"\":\"\"test-01@veridinet.com\"\",\"\"EventSource\"\":\"\"SharePoint\"\",\"\"ItemType\"\":\"\"File\"\",\"\"ListId\"\":\"\"145ccba9-88c7-4093-8f57-e216180b0976\"\",\"\"ListItemUniqueId\"\":\"\"faec3800-cc6d-4d08-abb9-78a3efd91e36\"\",\"\"Site\"\":\"\"a6315520-4891-4ce9-adfe-42d158567938\"\",\"\"UserAgent\"\":\"\"Mozilla\\/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/62.0.3202.94 Safari\\/537.36\"\",\"\"WebId\"\":\"\"20a8224f-e967-433a-bc6a-e5375419f574\"\",\"\"SourceFileExtension\"\":\"\"docx\"\",\"\"SiteUrl\"\":\"\"https:\\/\\/veridinet-my.sharepoint.com\\/personal\\/alan_veridinet_com\\/\"\",\"\"SourceFileName\"\":\"\"CC Numbers.docx\"\",\"\"SourceRelativeUrl\"\":\"\"Documents\\/!!__11Demo11__!!\"\"}\"");
         expLogs.put(3, ".0000000Z,test-01@veridinet.com,FileDownloaded,\"{\"\"CreationTime\"\":\"\"ChangedTimeCreation\"\",\"\"Id\"\":\"\"f9d99b56-6eb4-4a41-dde9-08d5414380d9\"\",\"\"Operation\"\":\"\"FileDownloaded\"\",\"\"OrganizationId\"\":\"\"73f5d3eb-40ae-45bd-82b4-20a92a4187c7\"\",\"\"RecordType\"\":6,\"\"UserKey\"\":\"\"i:0h.f|membership|1003bffd823db125@live.com\"\",\"\"UserType\"\":0,\"\"Version\"\":1,\"\"Workload\"\":\"\"OneDrive\"\",\"\"ClientIP\"\":\"\"31.154.9.98\"\",\"\"ObjectId\"\":\"\"https:\\/\\/veridinet-my.sharepoint.com\\/personal\\/alan_veridinet_com\\/Documents\\/!!__11Demo11__!!\\/CC Numbers.docx\"\",\"\"UserId\"\":\"\"test-01@veridinet.com\"\",\"\"EventSource\"\":\"\"SharePoint\"\",\"\"ItemType\"\":\"\"File\"\",\"\"ListId\"\":\"\"145ccba9-88c7-4093-8f57-e216180b0976\"\",\"\"ListItemUniqueId\"\":\"\"faec3800-cc6d-4d08-abb9-78a3efd91e36\"\",\"\"Site\"\":\"\"a6315520-4891-4ce9-adfe-42d158567938\"\",\"\"UserAgent\"\":\"\"Mozilla\\/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/62.0.3202.94 Safari\\/537.36\"\",\"\"WebId\"\":\"\"20a8224f-e967-433a-bc6a-e5375419f574\"\",\"\"SourceFileExtension\"\":\"\"docx\"\",\"\"SiteUrl\"\":\"\"https:\\/\\/veridinet-my.sharepoint.com\\/personal\\/alan_veridinet_com\\/\"\",\"\"SourceFileName\"\":\"\"CC Numbers.docx\"\",\"\"SourceRelativeUrl\"\":\"\"Documents\\/!!__11Demo11__!!\"\"}\"");
@@ -33,8 +43,7 @@ public class LogGeneratorOffice365 {
         expLogs.put(10, ".0000000Z,test-01@veridinet.com,SharingSet,\"{\"\"CreationTime\"\":\"\"ChangedTimeCreation\"\",\"\"Id\"\":\"\"769e586b-0933-46f1-7ef1-08d53f71861c\"\",\"\"Operation\"\":\"\"SharingSet\"\",\"\"OrganizationId\"\":\"\"73f5d3eb-40ae-45bd-82b4-20a92a4187c7\"\",\"\"RecordType\"\":14,\"\"UserKey\"\":\"\"i:0h.f|membership|10033fff906cd323@live.com\"\",\"\"UserType\"\":0,\"\"Version\"\":1,\"\"Workload\"\":\"\"OneDrive\"\",\"\"ClientIP\"\":\"\"195.138.83.92\"\",\"\"ObjectId\"\":\"\"https:\\/\\/veridinet-my.sharepoint.com\\/personal\\/johndoe_veridinet_onmicrosoft_com\\/Documents\\/MappingAuto\\/ATestFile1.docx\"\",\"\"UserId\"\":\"\"test-01@veridinet.com\"\",\"\"EventSource\"\":\"\"SharePoint\"\",\"\"ItemType\"\":\"\"File\"\",\"\"ListId\"\":\"\"6228cc67-aab0-44cf-89c2-f68a5ef79b4d\"\",\"\"ListItemUniqueId\"\":\"\"4676742c-3a49-48c2-aba3-a2dc57fa20ac\"\",\"\"Site\"\":\"\"5af6924b-a337-4895-a153-b559e2111bdc\"\",\"\"UserAgent\"\":\"\"Mozilla\\/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/63.0.3239.84 Safari\\/537.36\"\",\"\"WebId\"\":\"\"760ff412-5bcc-46f1-aa38-ab14c7fcd479\"\",\"\"EventData\"\":\"\"<Permissions granted>Contribute<\\/Permissions granted>\"\",\"\"SourceFileExtension\"\":\"\"docx\"\",\"\"TargetUserOrGroupType\"\":\"\"SharePointGroup\"\",\"\"SiteUrl\"\":\"\"https:\\/\\/veridinet-my.sharepoint.com\\/personal\\/johndoe_veridinet_onmicrosoft_com\"\",\"\"SourceFileName\"\":\"\"ATestFile1.docx\"\",\"\"SourceRelativeUrl\"\":\"\"Documents\\/MappingAuto\\/ATestFile1.docx\"\",\"\"TargetUserOrGroupName\"\":\"\"SharingLinks.4676742c-3a49-48c2-aba3-a2dc57fa20ac.OrganizationEdit.21071db2-3d74-4261-922f-0a7854968665\"\"}\"");
 
         String path = new File("").getAbsolutePath();
-        int countLog = Integer.parseInt(arg[0]);
-        String fileName = "LogExample_" + arg[0] + ".csv";
+        String fileName = "LogExample_" + countLog + ".csv";
 
         Path filePath = Paths.get(path);
         File file = new File(filePath + "\\" + fileName);
@@ -45,10 +54,10 @@ public class LogGeneratorOffice365 {
         int lineNum;
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
-
+            bufferedWriter.write( "CreationDate,UserIds,Operations,AuditData\n");
             for (int i = 1; i < countLog+1; i++) {
                 lineNum = random.nextInt(10) + 1;
-                Timestamp timestamp = new Timestamp(System.currentTimeMillis()-(i* 1000L));
+                Timestamp timestamp = new Timestamp(System.currentTimeMillis()-delayTime-(i* 1000L));
                 line = sdf.format(timestamp) + expLogs.get(lineNum).replace("ChangedTimeCreation", sdf.format(timestamp));
                 newEmail = "test" + i + "@test.com";
                 bufferedWriter.write( line.replaceAll("(app@sharepoint)|(\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)", newEmail)+ "\n");
