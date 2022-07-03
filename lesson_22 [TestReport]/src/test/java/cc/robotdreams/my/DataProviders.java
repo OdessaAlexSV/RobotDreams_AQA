@@ -1,6 +1,6 @@
 package cc.robotdreams.my;
 
-import cc.robordreams.my.Student;
+import cc.robortdreams.my.Student;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import org.testng.annotations.DataProvider;

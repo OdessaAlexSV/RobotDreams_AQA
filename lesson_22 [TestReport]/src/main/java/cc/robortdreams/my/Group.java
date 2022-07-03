@@ -1,4 +1,4 @@
-package cc.robordreams.my;
+package cc.robortdreams.my;
 
 import java.util.*;
 
@@ -51,7 +51,7 @@ public class Group {
     public void changeHead(Student newHead) {
         if (newHead == null) throw new IllegalArgumentException("head must not be null");
         this.head = newHead;
-    //    students.add(newHead);
+        //    students.add(newHead);
     }
 
     public Student getHead() {

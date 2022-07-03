@@ -1,6 +1,6 @@
 package cc.robotdreams.my;
 
-import cc.robordreams.my.Student;
+import cc.robortdreams.my.Student;
 import org.testng.annotations.Test;
 
 /**

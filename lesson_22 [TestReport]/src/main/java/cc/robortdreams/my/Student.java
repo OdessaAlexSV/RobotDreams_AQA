@@ -1,4 +1,4 @@
-package cc.robordreams.my;
+package cc.robortdreams.my;
 
 import java.util.Objects;
 
@@ -18,7 +18,10 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return age == student.age && name.equals(student.name) && lastName.equals(student.lastName) && education.equals(student.education) && id.equals(student.id);
+        return age == student.age && name.equals(student.name)
+                && lastName.equals(student.lastName)
+                && education.equals(student.education)
+                && id.equals(student.id);
     }
 
     @Override

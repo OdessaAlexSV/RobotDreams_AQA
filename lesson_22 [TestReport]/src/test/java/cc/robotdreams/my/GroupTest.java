@@ -1,8 +1,7 @@
 package cc.robotdreams.my;
 
-import cc.robordreams.my.Group;
-import cc.robordreams.my.Student;
-import org.testng.Assert;
+import cc.robortdreams.my.Group;
+import cc.robortdreams.my.Student;
 import org.testng.annotations.Test;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
