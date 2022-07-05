@@ -1,7 +1,6 @@
 /out
 *.iml
 .idea
-*.csv
 *.html
 *.xml
 

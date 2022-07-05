@@ -1,5 +1,9 @@
 package cc.robotdreams.my.hw.logging;
 
+/**
+ * Created by asvidersky on 7/5/2022.
+ */
+
 import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.LogEvent;
 import org.apache.logging.log4j.core.appender.AbstractAppender;

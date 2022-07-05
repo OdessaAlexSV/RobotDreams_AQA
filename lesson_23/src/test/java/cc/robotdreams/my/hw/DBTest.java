@@ -1,5 +1,4 @@
 package cc.robotdreams.my.hw;
-
 import cc.robotdreams.my.hw.dataproviders.LoadDataFromCSV;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
