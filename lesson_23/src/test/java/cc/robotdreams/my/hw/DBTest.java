@@ -129,7 +129,8 @@ public class DBTest extends BaseTest {
         preparedStatement = getConnectionDB().prepareStatement(sqlPattern);
         rs = preparedStatement.executeQuery();
         while (rs.next()) {
-            System.out.printf("Student is : %d %s %s  \n", rs.getInt("user_id"),
+            System.out.printf("Student is : %d %s %s  \n",
+                    rs.getInt("user_id"),
                     rs.getString("first_name"),
                     rs.getString("last_name"));
         }

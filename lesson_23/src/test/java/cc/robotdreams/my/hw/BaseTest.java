@@ -22,7 +22,7 @@ public class BaseTest {
         try {
             return DBConnection.getInstance(dbAddressServ,dbUser,dbPassword).getConnection();
         } catch (SQLException e) {
-            log.error("Failed to get connection {}", e.getMessage());
+            log.error("Failed to get connection\n {}", e.getMessage());
         }
         return null;
     }
