@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
  * редактирует запись через функцию редактирования.
  */
 
-public class testDemoElements extends TestBase {
+public class DemoElementsTest extends TestBase {
 
     @Test
     public void testElementsButtonsItem() {
