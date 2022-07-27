@@ -3,6 +3,10 @@
 .idea
 *.html
 *.xml
+*.properties
+*.lst
+*.dumpstream
+*.txt
 
 # Compiled class file
 *.class
